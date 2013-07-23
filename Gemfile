@@ -28,10 +28,10 @@ group :assets do
   # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
   gem 'turbolinks'
 
-  gem "haml-rails"
+  
 end
 
-gem 'jquery-rails'
+gem "haml-rails"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
