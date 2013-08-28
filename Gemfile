@@ -26,15 +26,12 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-  gem 'turbolinks'
-
-  
+  gem 'turbolinks'  
 end
 
 gem "haml-rails"
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

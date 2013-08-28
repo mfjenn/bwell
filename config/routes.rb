@@ -1,4 +1,12 @@
 Bwell::Application.routes.draw do
+  get "sessions/new"
+
+  get "profile/new"
+
+  get "profile/home"
+
+  get "profile/history"
+
    get "home/index"
    get 'home/about'
    get 'home/contact'
@@ -6,6 +14,13 @@ Bwell::Application.routes.draw do
    match '/', to: 'home#index'
    match '/about', to: 'home#about'
    match '/contact', to: 'home#contact' 
+   
+   get 'signup_path', to: 'users#new', as: 'signup_path'
+   get 'login', to: 'sessions#new', as: 'login'
+   get 'logout', to: 'sessions#destroy', as: 'logout'
+
+   resources :users
+   resources :sessions
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
