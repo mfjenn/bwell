@@ -1,23 +1,15 @@
-Bwell::Application.routes.draw do
-  get "sessions/new"
-
-  get "profile/new"
-
-  get "profile/home"
-
-  get "profile/history"
-
+Bwell::Application.routes.draw do 
    get "home/index"
    get 'home/about'
    get 'home/contact'
-   root :to => 'home#index'
+     root :to => 'home#index'
    match '/', to: 'home#index'
    match '/about', to: 'home#about'
    match '/contact', to: 'home#contact' 
    
    get 'signup_path', to: 'users#new', as: 'signup_path'
-   get 'login', to: 'sessions#new', as: 'login'
-   get 'logout', to: 'sessions#destroy', as: 'logout'
+   get 'login_path', to: 'sessions#new', as: 'login_path'
+   get 'logout_path', to: 'sessions#destroy', as: 'logout_path'
 
    resources :users
    resources :sessions
