@@ -1,8 +1,6 @@
 Bwell::Application.routes.draw do 
-   get "home/index"
-   get 'home/about'
-   get 'home/contact'
-     root :to => 'home#index'
+   
+   root :to => 'home#index'
    match '/', to: 'home#index'
    match '/about', to: 'home#about'
    match '/contact', to: 'home#contact' 
@@ -10,9 +8,12 @@ Bwell::Application.routes.draw do
    get 'signup_path', to: 'users#new', as: 'signup_path'
    get 'login_path', to: 'sessions#new', as: 'login_path'
    get 'logout_path', to: 'sessions#destroy', as: 'logout_path'
+   get 'root_url', to: 'home#index', as: 'root_url'
 
    resources :users
    resources :sessions
+   
+   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
