@@ -1,5 +1,13 @@
 Bwell::Application.routes.draw do 
    
+  get "posts/index"
+
+  get "posts/new"
+
+  get "posts/show"
+
+  get "posts/edit"
+
    root :to => 'home#index'
    match '/', to: 'home#index'
    match '/about', to: 'home#about'
