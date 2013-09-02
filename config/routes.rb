@@ -1,5 +1,7 @@
 Bwell::Application.routes.draw do 
    
+  get "replies/new"
+
   # get "posts/index"
   # 
   #   get "posts/new"
