@@ -19,6 +19,8 @@ Bwell::Application.routes.draw do
   
     get 'blog_path', to: 'posts#index', as: 'blog_path'
     get 'new_post_path', to: 'posts#new', as: 'new_post_path'
+    get 'post_reply_path',  to: 'replies#new', as: 'post_reply_path'
+    get 'edit_post_reply_path',  to: 'replies#new', as: 'edit_post_reply_path'
 
    
    
