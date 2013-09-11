@@ -1,5 +1,9 @@
 Bwell::Application.routes.draw do 
   
+  get "inquiries/new"
+
+  get "inquiries/thank_you"
+
   resources :users
   resources :sessions
   resources :posts do
@@ -9,7 +13,7 @@ Bwell::Application.routes.draw do
    root :to => 'home#index'
    match '/', to: 'home#index'
    match '/about', to: 'home#about'
-   match '/contact', to: 'home#contact' 
+   match '/contact', to: 'inquiries#new' 
    
    get 'signup_path', to: 'users#new', as: 'signup_path'
    get 'login_path', to: 'sessions#new', as: 'login_path'
@@ -22,7 +26,9 @@ Bwell::Application.routes.draw do
     get 'post_reply_path',  to: 'replies#new', as: 'post_reply_path'
     get 'edit_post_reply_path',  to: 'replies#new', as: 'edit_post_reply_path'
 
-   
+    resources :inquiries, :only => [:new, :create] do
+      get 'thank_you', :on => :collection
+    end
    
    
   # The priority is based upon order of creation:
