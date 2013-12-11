@@ -13,7 +13,8 @@ Bwell::Application.routes.draw do
    root :to => 'home#index'
    match '/', to: 'home#index'
    match '/about', to: 'home#about'
-   match '/contact', to: 'inquiries#new' 
+   match '/contact', to: 'inquiries#new'
+   match '/inquiries', to: 'inquiries#thank_you' 
    
    get 'signup_path', to: 'users#new', as: 'signup_path'
    get 'login_path', to: 'sessions#new', as: 'login_path'
