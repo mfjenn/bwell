@@ -61,7 +61,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.24)
     multi_json (1.7.9)
-    pg (0.16.0)
+    pg (0.17.0)
     polyglot (0.3.3)
     pony (1.5.1)
       mail (>= 2.0)
@@ -122,7 +122,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   haml-rails
   jquery-rails
-  pg
+  pg (~> 0.17.0)
   pony
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
