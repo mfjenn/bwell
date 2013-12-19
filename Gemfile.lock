@@ -148,7 +148,7 @@ DEPENDENCIES
   mail_form (~> 1.5.0)
   omniauth
   omniauth-facebook (= 1.4.0)
-  pg (~> 0.17.0)
+  pg
   protected_attributes
   rails (~> 4.0.1)
   rails_12factor
