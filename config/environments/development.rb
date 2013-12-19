@@ -15,14 +15,14 @@ Bwell::Application.configure do
 
   # Don't care if the mailer can't send
    config.action_mailer.delivery_method = :smtp
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.smtp_settings = {
-      :address => "smtp.gmail.com",
+   config.action_mailer.raise_delivery_errors = true
+   config.action_mailer.perform_deliveries = true
+   config.action_mailer.smtp_settings = {
+      :address => "smtp.sanfranciscosportsmassage.com",
       :port => 587,
-      :domain => "smtp.gmail.com",
-      :user_name => "maryfjenn@gmail.com",
-      :password => "Who'str1cky?",
+      :domain => "www.sanfranciscosportsmassage.com",
+      :user_name => "sanfranciscosportsmassage.com",
+      :password => "Chispa888!",
       :authentication => "plain",
       :enable_starttls_auto => true
       }
