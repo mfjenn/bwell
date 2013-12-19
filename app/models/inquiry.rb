@@ -1,44 +1,16 @@
-class Inquiry
-  extend ActiveModel::Naming
-    include ActiveModel::Conversion
-    include ActiveModel::Validations
-    include ActionView::Helpers::TextHelper
-  
-  attr_accessor :name, :email, :message, :subject, :nickname
-  
-  validates :name, 
-            :presence => true
-  
-  validates :email,
-            :format => { :with => /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/ }
-            
-  validates :subject,
-            :presence => true
-  
-  validates :message,
-            :length => { :minimum => 10, :maximum => 1000 }
-  
-  validates :nickname, 
-            :format => { :with => /^$/ }
-  
-  def initialize(attributes = {})
-    attributes.each do |name, value|
-      send("#{name}=", value)
-    end
-  end
-  
-  def deliver
-    return false unless valid?
-      Pony.mail({
-        :from => %("#{name}" <#{email}>),
-        :reply_to => email,
-        :subject => "Website inquiry",
-        :body => message,
-        :html_body => simple_format(message)
-      })
-  end
-      
-  def persisted?
-    false
+class Inquiry < MailForm::Base
+  include MailForm::Delivery
+  attribute :name,      :validate => true
+  attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
+  attribute :message
+  attribute :additional_field,  :captcha  => true
+
+
+  def headers
+    {
+      :subject => "Web Inquiry",
+      :to => "mary@sanfranciscosportsmassage.com",
+      :from => %("#{name}" <#{email}>)
+    }
   end
 end

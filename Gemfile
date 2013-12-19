@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '~> 4.0.1'
 ruby '2.0.0'
-
-gem 'pony'
 
 group :development do
   gem 'sqlite3'
@@ -17,10 +15,11 @@ end
 # in production environments by default.
 group :assets do
   gem 'bootstrap-sass', '2.1'
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
   # Use jquery as the JavaScript library
   gem 'jquery-rails'
+  
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
@@ -31,7 +30,14 @@ end
 
 gem "haml-rails"
 
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.1.2'
+
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+
+gem "mail_form", "~> 1.5.0"
+
+gem 'protected_attributes'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

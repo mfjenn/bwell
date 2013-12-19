@@ -4,13 +4,19 @@ class InquiriesController < ApplicationController
     @inquiry = Inquiry.new
   end
     
-  def create
-    @inquiry = Inquiry.new(params[:inquiry])
-    if @inquiry.deliver
-      render :thank_you
-    else
-      render :new
-    end
+  def thank_you
+      begin
+        @inquiry = Inquiry.new(params[:inquiry])
+        @inquiry.request = request
+        if @inquiry.valid?
+          @inquiry.deliver
+          render :thank_you
+        else
+          render :new
+        end
+      rescue ScriptError
+        flash[:error] = 'Sorry, this message appears to be spam and was not delivered.'
+      end
   end
   
 end

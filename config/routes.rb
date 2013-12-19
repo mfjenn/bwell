@@ -1,8 +1,8 @@
 Bwell::Application.routes.draw do 
   
-  get "inquiries/new"
+  #get "inquiries/new", via: 'get' , :as => :contact
 
-  get "inquiries/thank_you"
+  #get "inquiries/thank_you", via: 'post', :as => :thank_you
 
   resources :users
   resources :sessions
@@ -11,25 +11,22 @@ Bwell::Application.routes.draw do
   end
   
    root :to => 'home#index'
-   match '/', to: 'home#index'
-   match '/about', to: 'home#about'
-   match '/contact', to: 'inquiries#new'
-   match '/inquiries', to: 'inquiries#thank_you' 
+   get '/', to: 'home#index'
+   get '/about', to: 'home#about'
+   match '/contact',  to: 'inquiries#new',    via: 'get' , :as => :contact
+   match '/thank_you', to: 'inquiries#thank_you', via: 'post', :as => :thank_you
    
    get 'signup_path', to: 'users#new', as: 'signup_path'
    get 'login_path', to: 'sessions#new', as: 'login_path'
    get 'logout_path', to: 'sessions#destroy', as: 'logout_path'
    get 'root_url', to: 'home#index', as: 'root_url'
    
-  
     get 'blog_path', to: 'posts#index', as: 'blog_path'
     get 'new_post_path', to: 'posts#new', as: 'new_post_path'
     get 'post_reply_path',  to: 'replies#new', as: 'post_reply_path'
     get 'edit_post_reply_path',  to: 'replies#new', as: 'edit_post_reply_path'
 
-    resources :inquiries, :only => [:new, :create] do
-      get 'thank_you', :on => :collection
-    end
+    
    
    
   # The priority is based upon order of creation:

@@ -1,18 +1,12 @@
-= form_for inquiry do |f|
-  %div{:style => "display: none;"}
-    = f.label :nickname
-    = f.text_field :nickname
-  %div
-    = f.label :name
+= form_for @inquiry, :url => thank_you_path do  |f|
+  .form-group
+    = f.label :name, "Name"
     = f.text_field :name
-  %div
-    = f.label :email
-    = f.text_field :email
-  %div
-    = f.label :subject
-    = f.text_field :subject
-  %div
-    = f.label :message
-    = f.text_area :message
-  %div
-    = f.submit "Send"
+  .form-group
+    = f.label :email, "Email Address"
+    = f.email_field :email
+  .form-group
+    = f.label :message, "Message"
+    = f.text_field :message, :as => :text
+  .form-group.text-center
+    = f.submit "Send Message", :class => "btn btn-lg btn-primary"
