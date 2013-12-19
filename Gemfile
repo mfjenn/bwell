@@ -31,7 +31,7 @@ end
 gem "haml-rails"
 
 gem 'bcrypt-ruby', '~> 3.1.2'
-
+gem 'rails_12factor'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 
