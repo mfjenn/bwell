@@ -13,6 +13,7 @@ Bwell::Application.routes.draw do
    root :to => 'home#index'
    get '/', to: 'home#index'
    get '/about', to: 'home#about'
+   get '/services', to: 'home#services'
    match '/contact',  to: 'inquiries#new',    via: 'get' , :as => :contact
    match '/thank_you', to: 'inquiries#thank_you', via: 'post', :as => :thank_you
    

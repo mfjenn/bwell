@@ -7,8 +7,7 @@
     = csrf_meta_tags
     = render 'layouts/shim'
   %body
-    = render 'layouts/header'
-    .container
-      = link_to image_tag("logo.png", alt: "B*Well San Francisco Sports Massage"), 'http://www.sanfranciscosportsmassage.com'    
+    .container 
+      = render 'layouts/header'   
       = yield
       = render 'layouts/footer'

@@ -1,12 +1,13 @@
-= form_for @inquiry, :url => thank_you_path do  |f|
-  .form-group
-    = f.label :name, "Name"
-    = f.text_field :name
-  .form-group
-    = f.label :email, "Email Address"
-    = f.email_field :email
-  .form-group
-    = f.label :message, "Message"
-    = f.text_field :message, :as => :text
-  .form-group.text-center
-    = f.submit "Send Message", :class => "btn btn-lg btn-primary"
+.container
+  = form_for @inquiry, :url => thank_you_path do  |f|
+    .form-group
+      = f.label :name, "Name"
+      = f.text_field :name
+    .form-group
+      = f.label :email, "Email Address"
+      = f.email_field :email
+    .form-group
+      = f.label :message, "Message"
+      = f.text_field :message, :as => :text
+    .form-group.text-center
+      = f.submit "Send Message", :class => "btn btn-lg btn-primary"
