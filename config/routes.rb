@@ -15,6 +15,7 @@ Bwell::Application.routes.draw do
    get '/about', to: 'home#about'
    get '/services', to: 'home#services'
    match '/contact',  to: 'inquiries#new',    via: 'get' , :as => :contact
+   match '/blog',  to: 'posts#index',    via: 'get' , :as => :blog
    match '/thank_you', to: 'inquiries#thank_you', via: 'post', :as => :thank_you
    
    get 'signup_path', to: 'users#new', as: 'signup_path'
